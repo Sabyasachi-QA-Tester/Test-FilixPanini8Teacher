@@ -1,0 +1,60 @@
+package testCases;
+
+import org.testng.annotations.Test;
+
+import pageObjects.ActivityPage;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import testBase.BaseClass;
+
+public class Test09_Activity extends BaseClass {
+	
+	@Test
+	public void Test_Activity() throws InterruptedException {
+		
+		LoginPage lp = new LoginPage(driver);
+		
+		lp.Click_login();
+		lp.Set_email(p.getProperty("Email"));
+		lp.click_OTP();
+		lp.Set_OTP(p.getProperty("OTP"));
+		lp.Click_verify();
+
+		
+		HomePage hp = new HomePage(driver);
+		hp.Click_menu();
+		hp.Click_HPCSection();
+		hp.Click_Activity();
+		
+		ActivityPage ap = new ActivityPage(driver);
+		
+		ap.Search_Activities("Colours");
+		ap.Click_RemoveActivity();
+		ap.Click_AddActivity();
+		ap.Set_Title(randomeString());
+		ap.Set_Description(randomeString().toLowerCase());		
+		ap.Set_Class();
+		ap.Set_Age("5");
+		ap.Click_BookName();
+		ap.Search_Books("Sparkle -1");
+		ap.Click_Book();
+		ap.Click_Chapters();
+		ap.Search_Activities("Rhymes");
+		ap.Click_Chapter();
+		ap.Click_Competencies();
+		ap.Search_Competencies("Cognitive Development");
+		ap.Click_Competency();
+		ap.Click_Skills();
+		ap.Search_Skills("Citizenship");
+		ap.Click_Skill();
+		ap.txt_CompetencyExplanation(randomeString());
+		ap.txt_SkillExplanation(randomeString());
+		ap.txt_Rubric(randomeString());
+		ap.Click_AddAnotherPair();
+		ap.Click_RemoveAnotherPair();
+		ap.Click_PDFUpload("C:\\Users\\CHEENTA\\Pictures\\Screenshots\\New folder");
+		ap.Click_Cancel();
+		
+	}
+
+}

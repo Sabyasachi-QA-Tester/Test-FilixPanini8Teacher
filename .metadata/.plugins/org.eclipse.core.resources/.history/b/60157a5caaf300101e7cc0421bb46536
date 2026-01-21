@@ -1,0 +1,43 @@
+package pageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import utilities.WaitUtils;
+
+public class AdminPage extends BasePage {
+
+	public AdminPage(WebDriver driver) {
+		super(driver);
+	}
+	
+	public void Click_Admin() {
+		WebElement btn_admin = driver.findElement(By.xpath("//a[@href='/admin/home']"));
+		WaitUtils.WaitForClickable(driver, btn_admin).click();
+	}
+	
+	public void Click_CreatorSpace() {
+		WebElement btn_CreatorSpace = driver.findElement(By.xpath("//button[normalize-space()='Select an option']"));
+		WaitUtils.WaitForClickable(driver, btn_CreatorSpace).click();
+	}
+	
+	public void Click_Tests() {
+		WebElement btn_Tests = driver.findElement(By.xpath("//a[@href='/creator/questions']"));
+		WaitUtils.WaitForClickable(driver, btn_Tests).click();
+	}
+	
+	public void Click_AddNew() {
+		WebElement btn_AddNew = driver.findElement(By.xpath("//a[@href='/creator/tests/add-test']"));
+		WaitUtils.WaitForClickable(driver, btn_AddNew).click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

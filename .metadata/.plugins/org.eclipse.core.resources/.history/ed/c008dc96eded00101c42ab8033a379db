@@ -1,0 +1,142 @@
+package pageObjects;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class ManagePage extends BasePage {
+
+	public ManagePage(WebDriver driver) {
+		super(driver);
+	}
+	
+	@FindBy(xpath="//input[@placeholder='Search schools...']")
+	WebElement txt_SearchSchools;
+	
+	@FindBy(xpath="//a[@href='/admin/dashboard/createschool']")
+	WebElement btn_AddSchool;
+	
+	@FindBy(xpath="//div//input[@id='icon-image']")
+	WebElement btn_SchoolIcon;
+	
+	@FindBy(xpath="//input[@placeholder='Enter school name']")
+	WebElement txt_SchoolName;
+	
+	@FindBy(xpath="//input[@placeholder='Enter full address']")
+	WebElement txt_Address;
+	
+	@FindBy(xpath="//textarea[@placeholder='Enter school description (optional)']")
+	WebElement txt_desc;
+	
+	@FindBy(xpath="//input[@placeholder='Enter phone number (optional)']")
+	WebElement txt_Phone;
+	
+	@FindBy(xpath="//div//input[@id='cover-image']")
+	WebElement btn_Coverimage;
+	
+	@FindBy(xpath="//input[@id='react-select-2-input']")
+	WebElement txt_SelectAdmin;
+	
+	@FindBy(xpath="//div[@class='react-select__multi-value__remove css-v7duua']")
+	WebElement btn_deleteAdmin;
+	
+	@FindBy(xpath="//button[normalize-space()='Create School']")
+	WebElement btn_CreateSchool;
+	
+	@FindBy(xpath="//tr[1]//td[4]//button[@aria-controls='radix-«r2e»']")
+	WebElement btn_delete;
+	
+	@FindBy(xpath="//button[normalize-space()='Delete']")
+	WebElement btn_ConfirmDelete;
+	
+	public void Search_Schools(String school) throws InterruptedException {
+		Thread.sleep(2000);
+		txt_SearchSchools.sendKeys(school);
+		Thread.sleep(2000);
+		txt_SearchSchools.clear();
+	}
+	
+//	public void Pagination() throws InterruptedException {
+//		String text = driver.findElement(By.xpath("//*[contains(text(),'Page')]")).getText();
+//		
+//		int totalPages = Integer.parseInt(text.split("of")[1].trim());
+//		
+//		for (int i = 1; i <= totalPages; i++) {
+//
+//		    System.out.println("Currently on Page: " + i);
+//
+//		    List<WebElement> rows = driver.findElements(By.xpath("//div[contains(@class,'school')]"));
+//
+//		    System.out.println("Rows count: " + rows.size());
+//
+//		    if (i < totalPages) {
+//		    	Thread.sleep(2000);
+//		        driver.findElement(By.xpath("//button[contains(@class,'p-2 rounded-md text-gray-600 hover:bg-gray-100')]")).click();
+//		    }
+//		}
+//	}
+	
+	public void Click_AddNewSchool() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_AddSchool.click();
+	}
+	
+	public void Click_SchoolIcon(String imgupload) throws InterruptedException {
+		Thread.sleep(2000);
+		btn_SchoolIcon.sendKeys(imgupload);
+	}
+	
+	public void Set_SchoolName(String sname) throws InterruptedException {
+		Thread.sleep(2000);
+		txt_SchoolName.sendKeys(sname);
+	}
+	
+	public void Set_Address(String address) throws InterruptedException {
+		Thread.sleep(2000);
+		txt_Address.sendKeys(address);
+	}
+	
+	public void Set_Description(String desc) throws InterruptedException {
+		Thread.sleep(2000);
+		txt_desc.sendKeys(desc);
+	}
+	
+	public void Set_Phone(String phone) throws InterruptedException {
+		Thread.sleep(2000);
+		txt_Phone.sendKeys(phone);
+	}
+	
+	public void Set_CoverImage(String imgcover) throws InterruptedException {
+		Thread.sleep(2000);
+		btn_Coverimage.sendKeys(imgcover);
+	}
+	
+	public void Set_Admins(String admin) throws InterruptedException {
+		Thread.sleep(2000);
+		txt_SelectAdmin.sendKeys(admin);
+	}
+	
+	public void Click_DeleteAdmin() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_deleteAdmin.click();
+	}
+	
+	public void Click_CreateSchool() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_CreateSchool.click();
+	}
+	
+	public void Click_Delete() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_delete.click();;
+	}
+	
+	public void Verify_Delete() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_ConfirmDelete.click();
+	}
+
+}

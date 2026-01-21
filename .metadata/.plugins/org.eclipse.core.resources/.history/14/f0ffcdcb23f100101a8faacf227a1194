@@ -1,0 +1,55 @@
+package testCases;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import pageObjects.ThemePage;
+import testBase.BaseClass;
+
+public class Test07_Theme extends BaseClass {
+	
+	@Test
+	public void Test_Theme() {
+		
+		try {
+
+		LoginPage lp = new LoginPage(driver);
+		
+		lp.Click_login();
+		lp.Set_email(p.getProperty("Email"));
+		lp.click_OTP();
+		lp.Set_OTP(p.getProperty("OTP"));
+		lp.Click_verify();
+
+		
+		HomePage hp = new HomePage(driver);
+		hp.Click_menu();
+		hp.Click_HPCSection();
+		hp.Click_Themes();
+		
+		ThemePage tp = new ThemePage(driver);
+		
+		tp.Pagination();
+		tp.Search_ThemePage("Space");
+		tp.Click_CreateNewTheme();
+		tp.Set_ThemeName(randomeString().toLowerCase());
+		tp.Set_Description(randomeString().toLowerCase());
+		tp.Pagination();
+		
+		}
+		catch(Exception e) {
+			Assert.fail();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

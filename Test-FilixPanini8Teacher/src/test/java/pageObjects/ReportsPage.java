@@ -1,0 +1,71 @@
+package pageObjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class ReportsPage extends BasePage {
+
+	public ReportsPage(WebDriver driver) {
+		super(driver);
+	}
+	
+	
+	@FindBy(xpath="//a[@href='/teacher/reports/list']")
+	WebElement btn_Reports;
+	
+	@FindBy(xpath="//input[@placeholder='Search by name, email, or class...']")
+	WebElement txt_SearchReports;
+	
+	@FindBy(xpath="//button[@class='absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors']")
+	WebElement btn_cross;
+	
+	@FindBy(xpath="//tr[8]//td[5]//button[@tabindex='0' and normalize-space()='View Report']")
+	WebElement btn_ViewReport;
+	
+	@FindBy(xpath="//button[@role='combobox']")
+	WebElement btn_SelectCohort;
+	
+	@FindBy(xpath="//button[contains(@class,'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-9 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white')]")
+	WebElement btn_ViewCohortReport;
+	
+	@FindBy(xpath="//button[normalize-space()='View Report']")
+	WebElement btn_ViewProgressReport;
+	
+	public void Click_Reports() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_Reports.click();
+	}
+	
+	public void Search_Report(String text) throws InterruptedException {
+		Thread.sleep(2000);
+		txt_SearchReports.sendKeys(text);
+	}
+	
+	public void Click_Cross() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_cross.click();
+	}
+	
+	public void Click_ViewReport() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_ViewReport.click();
+	}
+	
+	public void Click_SelectCohort() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_SelectCohort.click();
+	}
+	
+	public void Click_CohortReport() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_ViewCohortReport.click();
+	}
+	
+	public void Click_ViewProgressReport() throws InterruptedException {
+		Thread.sleep(2000);
+		btn_ViewProgressReport.click();
+	}
+	
+
+}

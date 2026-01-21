@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;pageObjects.DashboardPage&apos; to &apos;CohortsPage&apos;&#x0D;&#x0A;- Original project: &apos;Test-FilixPanini8Teacher&apos;&#x0D;&#x0A;- Original element: &apos;pageObjects.DashboardPage&apos;&#x0D;&#x0A;- Renamed element: &apos;pageObjects.CohortsPage&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DashboardPage&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;pageObjects{DashboardPage.java[DashboardPage" matchStrategy="1" name="CohortsPage" qualified="false" references="true" similarDeclarations="false" stamp="1767170756895" textual="false" version="1.0"/>
+</session>
