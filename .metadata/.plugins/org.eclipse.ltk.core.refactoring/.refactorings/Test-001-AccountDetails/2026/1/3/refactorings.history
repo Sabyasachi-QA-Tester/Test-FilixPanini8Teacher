@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;testData&apos; to &apos;Test-Panini8&apos;&#x0D;&#x0A;- Original project: &apos;Test-001-AccountDetails&apos;&#x0D;&#x0A;- Destination element: &apos;Test-Panini8&apos;&#x0D;&#x0A;- Original element: &apos;testData&apos;" description="Copy folder" destination="=Test-Panini8" element1="testData" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1768634291691" units="0" version="1.0"/>
-</session>
